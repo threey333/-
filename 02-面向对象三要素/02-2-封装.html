@@ -1,0 +1,60 @@
+<!--
+ * @LastEditTime: 2022-07-01 01:07:14
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>面向对象三要素-封装</title>
+	</head>
+	<body>
+		<script>
+			//     // 父类
+			// class People {
+			//   name
+			//   age
+			//   protected weight // 受保护的属性，只有自己或者子类可以进行访问。
+			//   constructor(name, age) {
+			//     this.name = name
+			//     this.age = age
+			//     this.weight = 120
+			//   }
+			//   say() {
+			//     console.log(`我叫${this.name}，今年${this.age}岁了`)
+			//   }
+			//   eat() {
+			//     console.log(`${this.name}正在吃零食  `)
+			//   }
+			// }
+
+			// // 子类继承父类
+			// class Student extends People {
+			//   content
+			//   private girlfriend
+			//   constructor(name, age, content) {
+			//     super(name, age)
+			//     this.content = content
+			//     this.girlfriend = '莉莉'
+			//   }
+
+			//   study() {
+			//     console.log(`${this.name} 正在学习 ${this.content}`)
+			//   }
+
+			//   getWeight() {
+			//     console.log(`weight ${this.weight}`)
+			//   }
+			// }
+
+			// const xiaoyang = new Student('xiaoyang',10,'react')
+			// xiaoyang.getWeight() // => weight 120
+
+			// xiaoyang.weight // => 报错，只能在类'People'及其子类进行访问。
+
+			// xiaoyang.girlfriend // => 报错，女朋友”属性是私有的，只能在“学生”类中进行访问。
+		</script>
+	</body>
+</html>

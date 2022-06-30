@@ -1,0 +1,40 @@
+<!--
+ * @LastEditTime: 2022-06-30 23:30:36
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>什么是面向对象</title>
+	</head>
+	<body>
+		<script>
+			class People {
+				constructor(name, age) {
+					this.name = name
+					this.age = age
+				}
+
+				say() {
+					console.log(`我叫${this.name}，今年${this.age}岁了`)
+				}
+
+				eat() {
+					console.log(`${this.name}正在吃零食  `)
+				}
+			}
+
+			const ming = new People('ming', 18)
+			ming.say()
+			ming.eat()
+			console.log('---------------------')
+
+			const wang = new People('wang', 20)
+			wang.say()
+			wang.eat()
+		</script>
+	</body>
+</html>

@@ -1,0 +1,50 @@
+<!--
+ * @LastEditTime: 2022-07-01 01:06:59
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>面向对象三要素-继承</title>
+	</head>
+	<body>
+		<script>
+			// 父类
+			class People {
+				constructor(name, age) {
+					this.name = name
+					this.age = age
+				}
+				say() {
+					console.log(`我叫${this.name}，今年${this.age}岁了`)
+				}
+				eat() {
+					console.log(`${this.name}正在吃零食  `)
+				}
+			}
+
+			// 子类继承父类
+			class Student extends People {
+				constructor(name, age, content) {
+					super(name, age)
+					this.content = content
+				}
+
+				study() {
+					console.log(`${this.name} 正在学习 ${this.content}`)
+				}
+			}
+
+			// 1、创建子类实例
+			const xiaoming = new Student('xiaoming', 18, 'python')
+			// 子类先调用自身的study方法
+			xiaoming.study() // => xiaoming 正在学习 python
+			// 再调用父类的say方法和eat方法
+			xiaoming.say() // => 我叫xiaoming，今年18岁了
+			xiaoming.eat() // => xiaoming正在吃零食
+		</script>
+	</body>
+</html>

@@ -1,0 +1,52 @@
+<!--
+ * @LastEditTime: 2022-07-01 01:49:34
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>用Promise举例（单一职责原则）和（开放封闭原则）</title>
+	</head>
+	<body>
+		<script>
+			const imageSrc1 = './img/03.png'
+			const imageSrc2 =
+				'https://gd-hbimg.huaban.com/1b5f85db645ea166220f38815dc73faadf28537717740-Rr0Jqd_fw658'
+
+			const loadImg = function (src) {
+				return new Promise((resolve, reject) => {
+					const img = document.createElement('img')
+					img.onload = () => {
+						resolve(img)
+					}
+					img.onerror = () => {
+						reject('图片加载失败')
+					}
+					img.src = src
+				})
+			}
+
+			// 使用
+			const result = loadImg(imageSrc1)
+			result
+				.then((img) => {
+					alert(`width: ${img.width}`)
+					return img
+				})
+				.then((img) => {
+					alert(`height: ${img.height}`)
+					return img
+				})
+				// .then((img) => {
+				// 	alert(`src: ${img.src}`)
+				// 	return img
+				// })
+				.catch((err) => {
+					alert(err)
+				})
+		</script>
+	</body>
+</html>
